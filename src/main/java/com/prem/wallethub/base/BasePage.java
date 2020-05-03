@@ -15,6 +15,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.prem.wallethub.utilities.Global_Vars;
 
 public class BasePage {
@@ -25,6 +28,9 @@ public class BasePage {
 	public static WebDriverWait wait;
 	public static String browser;
 	public static JavascriptExecutor je;
+	public static ExtentReports extent;
+	public static ExtentTest test;
+	public ExtentHtmlReporter htmlReporter;
 
 	public BasePage() {
 		if (driver == null) {

@@ -17,13 +17,18 @@ public class TestUtility extends BasePage{
 	
 	// Utility for capturing screenshots when there is a failure of test.
 	
-	public static void captureScreenshot(String testMethodName) throws IOException {
+	public static void captureScreenshot(String testMethodName)  {
 		
 		Date d = new Date();
 		screenshotName = testMethodName+ d.toString().replace(":", "_").replace(" ", "_") + ".jpg";
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		File destFile= new File(System.getProperty("user.dir") + "\\target\\surefire-reports\\Screenshots\\" + screenshotName);
-		FileUtils.copyFile(srcFile, destFile);
+		try {
+			FileUtils.copyFile(srcFile, destFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	//Utility for comparing two int values
