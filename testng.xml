@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="WalletHubAssignments">
+
+	<listeners>
+		<listener class-name="com.prem.wallethub.listeners.CustomListener" />
+	</listeners>
+	
+	<test name="Review">
+		<classes>
+			<class name="com.prem.wallethub.testcases.WriteAReviewTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- WalletHubAssignments -->
