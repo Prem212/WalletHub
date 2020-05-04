@@ -31,16 +31,20 @@ public class FacebookPage extends BasePage {
 	public WebElement fbPostBtn;
 	
 	//Actions
-	
-	public void fbLogin() {
-		driver.get("https://www.facebook.com/");
-		fbEmailID.sendKeys("######");
-		fbPassword.sendKeys("#####");
+
+	public void fbLogin(String emailId,String password)	
+	//public void fbLogin() { 
+		driver.get("https://www.facebook.com/"); //This should happen in testcase.
+		fbEmailID.sendKeys(emailId);
+		//fbEmailID.sendKeys("######");
+		//fbPassword.sendKeys("#####");
+		fbPassword.sendKeys(password);
 		fbLoginBtn.click();
 	}
 	
+	//Same changes as above. Create parameters & pass the values from test case.
 	public void createPost() {
-		fbLogin();
+		fbLogin(); //This should happen in testcase.
 		String text=driver.getTitle();
 		fbCreatePostBtn.click();
 		//wait.until(ExpectedConditions.visibilityOf(fbTagnameBtn)); // i dont know this wait is not working
