@@ -46,11 +46,14 @@ public class ReviewsPage extends BasePage {
 		}
 	}
 	
-	
-	public void assertingPostedReview() {
+
+	public String getReviewProfileName()
+	//public void assertingPostedReview() {
 		wait.until(ExpectedConditions.visibilityOf(profileName));
 		String actualprofileName= profileName.getText();
-		Assert.assertEquals(actualprofileName, Global_Vars.postedReviewName);
+		return actualProfileName;
+		
+		Assert.assertEquals(actualprofileName, Global_Vars.postedReviewName); //Assertions should happen in TestCase, not in page class.
 	}
 
 }
