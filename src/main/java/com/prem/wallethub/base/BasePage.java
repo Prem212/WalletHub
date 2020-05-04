@@ -41,7 +41,8 @@ public class BasePage {
 				e.printStackTrace();
 			}
 			try {
-				config.load(fis);
+				config.load(fis); 
+				//Instead of Properties config = new Properties, create a new class for Config & load the file there & have methods like getBrowser(), etc & call them from here.
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -73,8 +74,8 @@ public class BasePage {
 		}
 		
 		je = (JavascriptExecutor) driver;
-
-		driver.get(config.getProperty("testsiteurl"));
+		
+		driver.get(config.getProperty("testsiteurl")); 
 		driver.manage().window().maximize();
 		//driver.manage().timeouts().implicitlyWait(Global_Vars.IMPLICIT_TIMEOUT,TimeUnit.SECONDS);
 		wait = new WebDriverWait(driver, Global_Vars.EXPLICIT_TIMEOUT);
